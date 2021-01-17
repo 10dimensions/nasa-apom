@@ -15,11 +15,26 @@ function Gateway() {
     )
       .then((results) => results.json())
       .then((data) => {
+        console.log(data);
         setImgFeed(data);
       });
   }, [rangeDate]);
 
-  return <div></div>;
+  return (
+    <div>
+      <div id="wrap">
+        <form action="" autoComplete="on">
+          <input
+            id="search"
+            name="Zoek"
+            type="text"
+            placeholder="Explore ..."
+          />
+          <input id="search_submit" value="Verstuur" type="submit" />
+        </form>
+      </div>
+    </div>
+  );
 }
 
 export default Gateway;
