@@ -11,7 +11,7 @@ The gallery is also responsive for mobile viewing.
 
 <br/>
 
-![alt text](./results/nasa-apod#2.png)
+![alt text](./results/nasa-apod%232.png)
 
 <br/>
 
