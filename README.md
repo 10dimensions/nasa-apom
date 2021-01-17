@@ -1,6 +1,5 @@
 # nasa-astronomy pictures
 
-
 A Modern UI for accessing the famed "NASA Astronomy Picture of the Day"
 
 The API provides ways to access photos between a given range of dates, as well as option to Search for a specific term.
@@ -9,6 +8,10 @@ Initial Implementation:
 <br />
 The first iteration is a proof-of-concept to fetch pictures for a given month and also navigate to earlier months.<br/>
 The gallery is also responsive for mobile viewing.
+
+<br/>
+
+![alt text](./results/nasa-apod#2.png)
 
 <br/>
 
