@@ -12,12 +12,15 @@ function Gateway() {
   const [imgFeed, setImgFeed] = useState([]);
 
   useEffect(() => {
+    setRangeDate(getRangeDate(month));
+  }, [month]);
+
+  useEffect(() => {
     fetch(
       `${endPoint}api_key=${apiKey}&start_date=${rangeDate[0]}&end_date=${rangeDate[1]}`
     )
       .then((results) => results.json())
       .then((data) => {
-        console.log(data);
         setImgFeed(data);
       });
   }, [rangeDate]);
@@ -34,6 +37,28 @@ function Gateway() {
           />
           <input id="search_submit" value="Verstuur" type="submit" />
         </form>
+      </div>
+
+      <div style={{ textAlign: "center" }}>
+        <button
+          className="button"
+          onClick={() => {
+            setMonth(month - 1);
+            console.log(month);
+          }}
+        >
+          {"<"}
+        </button>
+        <button
+          disabled="true"
+          className="button"
+          onClick={() => {
+            if (month > 0) return;
+            setMonth(month + 1);
+          }}
+        >
+          {">"}
+        </button>
       </div>
 
       <Gallery imgFeed={imgFeed} />

@@ -3,9 +3,12 @@ function formatDate(_date) {
 }
 
 function getRangeDate(index) {
+  if (index > 0) {
+    index = -1;
+  }
   var date = new Date();
-  var firstDay = new Date(date.getFullYear(), date.getMonth() - 1, 1);
-  var lastDay = new Date(date.getFullYear(), date.getMonth(), 0);
+  var firstDay = new Date(date.getFullYear(), date.getMonth() + index, 1);
+  var lastDay = new Date(date.getFullYear(), date.getMonth() + index + 1, 0);
 
   return [formatDate(firstDay), formatDate(lastDay)];
 }
