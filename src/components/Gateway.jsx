@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 
+import Gallery from "./Gallery";
+
 import { endPoint, apiKey } from "../data/data";
 import { getRangeDate } from "../utils/utils";
 
@@ -7,7 +9,7 @@ function Gateway() {
   const [month, setMonth] = useState(-1);
   const [rangeDate, setRangeDate] = useState(getRangeDate(month));
 
-  const [imgFeed, setImgFeed] = useState(null);
+  const [imgFeed, setImgFeed] = useState([]);
 
   useEffect(() => {
     fetch(
@@ -33,6 +35,8 @@ function Gateway() {
           <input id="search_submit" value="Verstuur" type="submit" />
         </form>
       </div>
+
+      <Gallery imgFeed={imgFeed} />
     </div>
   );
 }
